@@ -14,27 +14,60 @@ The **Pega Extensions Contextual Alert** is a React component designed for Pega 
 - ♿ **Accessible**: Includes proper ARIA attributes and roles
 - 📱 **Responsive**: Adapts to different screen sizes
 
+## Visual Examples
+
+### Component Appearance
+
+The component renders as clean, minimal alerts with colored icons and text:
+
+```
+🔴 **Urgent Action Required**
+   This is an urgent alert that requires immediate attention.
+
+ℹ️ **Information**
+   This is an informational alert with useful information.
+
+⚠️ **Warning** 
+   Please review the following information carefully.
+
+✅ **Success**
+   Operation completed successfully!
+```
+
+### Actual Rendered Output
+
+When rendered in your application, the alerts appear as:
+
+- **No backgrounds or borders** - Clean, minimal design
+- **Colored icons** - SVG icons tinted to match the alert type
+- **Colored text** - Title and message text in theme colors
+- **Responsive layout** - Icon and text properly aligned
+
 ## Alert Types
 
 ### 1. Urgent (`urgent`)
 - **Icon**: Attention_Icon.svg
 - **Color**: Red (`#dc2626`)
 - **Use Case**: Critical errors, immediate action required
+- **Visual**: Red attention icon with red text
 
 ### 2. Info (`info`)
 - **Icon**: Info_Icon.svg  
 - **Color**: Blue (`#3b82f6`)
 - **Use Case**: General information, tips, guidance
+- **Visual**: Blue info icon with blue text
 
 ### 3. Warning (`warning`)
 - **Icon**: Reminder_Icon.svg
 - **Color**: Orange (`#f59e0b`)
 - **Use Case**: Important notices, potential issues
+- **Visual**: Orange reminder icon with orange text
 
 ### 4. Success (`success`)
 - **Icon**: Speak_Icon.svg
 - **Color**: Green (`#10b981`)
 - **Use Case**: Successful operations, confirmations
+- **Visual**: Green speak icon with green text
 
 ## Props Configuration
 
@@ -101,6 +134,46 @@ import PegaExtensionsContextualAlert from './PegaExtensionsContextualAlert';
   message="This alert supports <strong>HTML content</strong> including <em>emphasis</em> and <a href='#'>links</a>."
 />
 ```
+
+## Component Structure
+
+### Layout Overview
+
+```
+┌─────────────────────────────────────────┐
+│ [Icon] **Alert Title**                  │
+│        Alert message content goes here. │
+│        Supports HTML formatting.        │
+└─────────────────────────────────────────┘
+```
+
+### HTML Output Structure
+
+```html
+<div data-testid="test-id">
+  <div class="contextual-alert alert-info" role="alert" aria-live="polite">
+    <div class="alert-header">
+      <div class="alert-icon">
+        <div role="img" aria-label="info" style="..."></div>
+      </div>
+      <div class="alert-title">
+        <strong style="color: #3b82f6;">Alert Title</strong>
+      </div>
+    </div>
+    <div class="alert-body">
+      <div class="alert-message text-content" style="color: #3b82f6;">
+        Alert message content
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### Responsive Behavior
+
+- **Desktop**: Full-sized icons (20px), normal padding and spacing
+- **Mobile**: Slightly smaller text, reduced padding for better mobile experience
+- **Icon positioning**: Always aligned to the top-left for multi-line messages
 
 ## Technical Implementation
 
@@ -207,20 +280,88 @@ The component uses CSS classes that can be targeted:
 - Script tags and event handlers are stripped
 - Safe HTML elements are preserved for formatting
 
-## Testing
+## Demo Stories & Testing
 
-The component includes Storybook stories for visual testing:
+### Available Storybook Stories
 
-- `InfoAlert` - Basic info alert example
-- `WarningAlert` - Warning alert example  
-- `UrgentAlert` - Urgent alert example
-- `SuccessAlert` - Success alert example
-- `HtmlMessage` - HTML content example
+The component includes comprehensive Storybook stories for visual testing and demonstration:
 
-Run Storybook to test different configurations:
-```bash
-npm run startStorybook
+#### 1. **InfoAlert** Story
+```tsx
+{
+  type: 'info',
+  title: 'Information',
+  message: 'This is an informational alert with some useful information.'
+}
 ```
+*Displays: Blue info icon with informational message*
+
+#### 2. **WarningAlert** Story
+```tsx
+{
+  type: 'warning',
+  title: 'Warning',
+  message: 'This is a warning alert. Please review the following information carefully.'
+}
+```
+*Displays: Orange warning icon with cautionary message*
+
+#### 3. **UrgentAlert** Story
+```tsx
+{
+  type: 'urgent',
+  title: 'Urgent Action Required',
+  message: 'This is an urgent alert that requires immediate attention.'
+}
+```
+*Displays: Red attention icon with urgent message*
+
+#### 4. **SuccessAlert** Story
+```tsx
+{
+  type: 'success',
+  title: 'Success',
+  message: 'Operation completed successfully! Your changes have been saved.'
+}
+```
+*Displays: Green success icon with confirmation message*
+
+#### 5. **HtmlMessage** Story
+```tsx
+{
+  type: 'info',
+  title: 'HTML Content',
+  message: 'This alert supports <strong>HTML content</strong> including <em>emphasis</em> and <a href="#">links</a>.'
+}
+```
+*Displays: Rich HTML content with formatted text and links*
+
+### Running the Demo
+
+To view all stories and interact with the component:
+
+```bash
+# Start Storybook development server
+npm run startStorybook
+
+# Open browser to http://localhost:6040
+# Navigate to "PegaExtensionsContextualAlert" in the sidebar
+```
+
+### Interactive Controls
+
+In Storybook, you can dynamically modify:
+- **type**: Switch between urgent, info, warning, success
+- **title**: Change the alert title text
+- **message**: Modify the alert message content (supports HTML)
+
+### Story Features
+
+- **Live Preview**: See real-time component rendering
+- **Interactive Controls**: Modify props and see instant updates  
+- **Responsive Testing**: Resize viewport to test mobile/desktop layouts
+- **Accessibility Testing**: Built-in a11y addon for compliance checking
+- **Code Examples**: View the exact code for each story
 
 ## Migration Notes
 
