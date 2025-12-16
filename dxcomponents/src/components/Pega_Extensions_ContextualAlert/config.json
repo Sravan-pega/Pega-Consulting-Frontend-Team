@@ -13,8 +13,8 @@
     {
       "name": "type",
       "label": "Alert Type",
-      "format": "DROPDOWN",
-      "options": [
+      "format": "SELECT",
+      "source": [
         {
           "key": "urgent",
           "value": "Urgent"
@@ -37,36 +37,19 @@
     {
       "name": "title",
       "label": "Alert Title",
-      "format": "TEXT"
+      "format": "TEXT",
+      "description": "Alert"
     },
     {
       "name": "message",
       "label": "Alert Message", 
-      "format": "TEXTAREA"
-    },
-    {
-      "name": "dismissible",
-      "label": "Dismissible",
-      "format": "CHECKBOX"
+      "format": "TEXT",
+      "description": ""
     },
     {
       "name": "visibility",
       "label": "Visible",
       "format": "VISIBILITY"
-    },
-    {
-      "label": "Advanced",
-      "format": "GROUP",
-      "collapsible": true,
-      "properties": [
-        {
-          "name": "testId",
-          "label": "Test ID",
-          "format": "TEXT",
-          "ignorePattern": "[^-_\\p{N}\\p{L}]",
-          "includeAnnotations": false
-        }
-      ]
     }
   ],
   "defaultConfig": {

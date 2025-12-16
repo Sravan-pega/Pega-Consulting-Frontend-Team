@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { withConfiguration } from '@pega/cosmos-react-core';
 import type { PConnFieldProps } from './PConnProps';
 import './create-nonce';
