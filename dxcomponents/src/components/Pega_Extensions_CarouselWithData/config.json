@@ -1,0 +1,76 @@
+{
+    "name": "Pega_Extensions_CarouselWithData",
+    "label": "Carousel with Data",
+    "description": "Carousel with Data",
+    "organization": "Pega",
+    "version": "1.0.0",
+    "library": "Extensions",
+    "allowedApplications": [],
+    "componentKey": "Pega_Extensions_CarouselWithData",
+    "type": "Field",
+    "subtype": "Text",
+    "properties": [
+        {
+            "name": "images",
+            "label": "Image URLs (comma-separated)",
+            "format": "TEXT",
+            "description": "Enter image URLs separated by commas. Example: url1,url2,url3"
+        },
+        {
+            "name": "autoPlay",
+            "label": "Auto Play",
+            "format": "BOOLEAN",
+            "defaultValue": true
+        },
+        {
+            "name": "interval",
+            "label": "Auto Play Interval (milliseconds)",
+            "format": "NUMBER",
+            "defaultValue": 5000
+        },
+        {
+            "name": "dataPage",
+            "label": "Data Page Name",
+            "format": "TEXT",
+            "description": "Name of the data page to load images from"
+        },
+        {
+            "name": "imageUrlProperty",
+            "label": "Image URL Property",
+            "format": "TEXT",
+            "defaultValue": "imageUrl",
+            "description": "Property name in data page records that contains the image URL"
+        },
+        {
+            "name": "altTextProperty",
+            "label": "Alt Text Property",
+            "format": "TEXT",
+            "defaultValue": "altText",
+            "description": "Property name in data page records that contains the alt text"
+        },
+        {
+            "name": "visibility",
+            "label": "Visible",
+            "format": "VISIBILITY"
+        },
+        {
+            "label": "Advanced",
+            "format": "GROUP",
+            "collapsible": true,
+            "properties": [
+                {
+                    "name": "testId",
+                    "label": "Test ID",
+                    "format": "TEXT",
+                    "ignorePattern": "[^-_\\p{N}\\p{L}]",
+                    "includeAnnotations": false
+                }
+            ]
+        }
+    ],
+    "defaultConfig": {
+        "detailFVLItem": true,
+        "isFormWidth": false,
+        "isContainerWidth": false
+    }
+}

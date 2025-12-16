@@ -1,5 +1,5 @@
 export declare const configProps: {
-    type: "urgent" | "info" | "warning" | "success";
+    type: "info" | "urgent" | "warning" | "success";
     title: string;
     message: string;
     dismissible: boolean;
