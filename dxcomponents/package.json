@@ -60,7 +60,8 @@
     "_lint:styles": "stylelint \"./**/*.@(js|jsx|ts|tsx)\"",
     "_lint:format": "prettier -c .",
     "_lint:spelling": "cspell --no-progress **/*",
-    "_lint:types": "tsc --noEmit"
+    "_lint:types": "tsc --noEmit",
+    "build-storybook": "storybook build -o ./docs"
   },
     "scriptsComments": {
     "build": "tsc -b tsconfig.build.json",
