@@ -8,10 +8,18 @@ const config = {
   docs: {
     autodocs: 'tag'
   },
-  // GitHub Pages configuration
-  managerHead: (head) => `
-    ${head}
-    <base href="${process.env.NODE_ENV === 'production' ? '/dxcomponents/' : '/'}">
-  `
+  // Configure base path for GitHub Pages deployment
+  webpackFinal: async (config) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.output.publicPath = '/dxcomponents/';
+    }
+    return config;
+  },
+  viteFinal: (config) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.base = '/dxcomponents/';
+    }
+    return config;
+  }
 };
 export default config;
