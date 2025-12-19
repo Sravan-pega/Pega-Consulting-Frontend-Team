@@ -7,6 +7,11 @@ const config = {
   },
   docs: {
     autodocs: 'tag'
-  }
+  },
+  // GitHub Pages configuration
+  managerHead: (head) => `
+    ${head}
+    <base href="${process.env.NODE_ENV === 'production' ? '/dxcomponents/' : '/'}">
+  `
 };
 export default config;
