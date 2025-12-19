@@ -1,1 +1,1 @@
-# Pega-Consulting-Frontend-Team
+# Pega-Consulting-Frontend
