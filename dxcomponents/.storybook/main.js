@@ -10,14 +10,10 @@ const config = {
   },
   // Configure base path for GitHub Pages deployment
   webpackFinal: async (config) => {
-    if (process.env.NODE_ENV === 'production') {
-      config.output.publicPath = '/Pega-Consulting-Frontend-Team/';
-    }
-    return config;
-  },
-  viteFinal: (config) => {
-    if (process.env.NODE_ENV === 'production') {
-      config.base = '/Pega-Consulting-Frontend-Team/';
+    const baseUrl = process.env.STORYBOOK_BASE_URL;
+    if (baseUrl && process.env.NODE_ENV === 'production') {
+      // Remove leading slash since Storybook adds './' prefix
+      config.output.publicPath = baseUrl.replace(/^\//, '');
     }
     return config;
   }
