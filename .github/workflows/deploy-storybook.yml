@@ -35,14 +35,16 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
+        working-directory: ./dxcomponents
         
       - name: Build Storybook
         run: npm run build-storybook
+        working-directory: ./dxcomponents
         env:
           NODE_ENV: production
         
       - name: Add .nojekyll file
-        run: touch ./storybook-static/.nojekyll
+        run: touch ./dxcomponents/storybook-static/.nojekyll
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -50,7 +52,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './storybook-static'
+          path: './dxcomponents/storybook-static'
 
   deploy:
     environment:
