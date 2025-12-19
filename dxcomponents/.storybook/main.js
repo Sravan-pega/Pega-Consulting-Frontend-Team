@@ -7,15 +7,6 @@ const config = {
   },
   docs: {
     autodocs: 'tag'
-  },
-  // Configure base path for GitHub Pages deployment
-  webpackFinal: async (config) => {
-    const baseUrl = process.env.STORYBOOK_BASE_URL;
-    if (baseUrl && process.env.NODE_ENV === 'production') {
-      // Remove leading slash since Storybook adds './' prefix
-      config.output.publicPath = baseUrl.replace(/^\//, '');
-    }
-    return config;
   }
 };
 export default config;
