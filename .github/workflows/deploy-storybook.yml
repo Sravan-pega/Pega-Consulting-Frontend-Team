@@ -41,6 +41,7 @@ jobs:
         working-directory: ./dxcomponents
         env:
           NODE_ENV: production
+          STORYBOOK_BASE_URL: "/Pega-Consulting-Frontend-Team/"
         
       - name: Add .nojekyll file
         run: touch ./dxcomponents/storybook-static/.nojekyll
