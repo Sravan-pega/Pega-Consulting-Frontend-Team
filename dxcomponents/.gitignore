@@ -59,7 +59,7 @@ pids/
 .eslintcache
 
 # Storybook build outputs
-storybook-static/
+# storybook-static/  # Commented out to allow GitHub Pages deployment
 .storybook/build/
 
 # Temporary folders

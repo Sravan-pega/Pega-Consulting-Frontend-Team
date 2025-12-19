@@ -9,15 +9,21 @@ const config = {
     autodocs: 'tag'
   },
   // Configure base path for GitHub Pages deployment
+  managerHead: (head) => {
+    if (process.env.NODE_ENV === 'production') {
+      return `${head}<base href="/Pega-Consulting-Frontend-Team/">`;
+    }
+    return head;
+  },
   webpackFinal: async (config) => {
     if (process.env.NODE_ENV === 'production') {
-      config.output.publicPath = '/dxcomponents/';
+      config.output.publicPath = '/Pega-Consulting-Frontend-Team/';
     }
     return config;
   },
   viteFinal: (config) => {
     if (process.env.NODE_ENV === 'production') {
-      config.base = '/dxcomponents/';
+      config.base = '/Pega-Consulting-Frontend-Team/';
     }
     return config;
   }
