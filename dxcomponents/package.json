@@ -8,6 +8,7 @@
   "scripts": {
     "_***Component_and_Library_mode***": "Component and library mode commands",
     "startStorybook": "storybook dev --port 6040 --quiet",
+    "build-storybook": "storybook build",
     "lint": "eslint .",
     "authenticate": "custom-dx-components authenticate",
     "buildComponent": "custom-dx-components buildComponent",
