@@ -1,0 +1,69 @@
+{
+  "name": "Pega_Extensions_video",
+  "label": "Video Player",
+  "description": "HTML5 Video Player with controls",
+  "organization": "Pega",
+  "version": "1.0.0",
+  "library": "Extensions",
+  "allowedApplications": [],
+  "componentKey": "Pega_Extensions_video",
+  "type": "Field",
+  "subtype": "Text",
+  "properties": [{
+      "name": "datapage",
+      "label": "Data Page",
+      "format": "TEXT"
+    },
+    {
+      "name": "datapageparams",
+      "label": "Data Page Parameters",
+      "format": "TEXT"
+    },
+    {
+      "name": "width",
+      "label": "Width",
+      "format": "TEXT"
+    },
+    {
+      "name": "height",
+      "label": "Height", 
+      "format": "TEXT"
+    },
+    {
+      "name": "autoplay",
+      "label": "Autoplay",
+      "format": "BOOLEAN"
+    },
+    {
+      "name": "muted",
+      "label": "Muted",
+      "format": "BOOLEAN"
+    },
+    {
+      "name": "loop",
+      "label": "Loop",
+      "format": "BOOLEAN"
+    },
+    {
+      "label": "Advanced",
+      "format": "GROUP",
+      "collapsible": true,
+      "properties": [
+        {
+          "name": "testId",
+          "label": "Test ID",
+          "format": "TEXT",
+          "ignorePattern": "[^-_\\p{N}\\p{L}]",
+          "includeAnnotations": false
+        }
+      ]
+    }
+  ],
+  "defaultConfig": {
+    "width": "100%",
+    "height": "auto",
+    "autoplay": false,
+    "muted": false,
+    "loop": false
+  }
+}
