@@ -58,6 +58,19 @@ export default styled.div(() => {
       line-height: 1;
       user-select: none;
       pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      transition: color 0.2s ease;
+    }
+
+    .eye-toggle-button:hover:not(:disabled) .eye-icon {
+      color: #333;
+    }
+
+    .eye-toggle-button:disabled .eye-icon {
+      color: #ccc;
     }
 
     /* Adjust input padding to make room for the eye icon */
